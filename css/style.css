@@ -14,7 +14,8 @@ header{
 	text-align: center;
 	padding: .5em;
 	font-size: 1em;
-	color: white;
+	color:#fbe1f6;
+	border: 5px solid #381932;
 
 }
 
@@ -25,26 +26,35 @@ header{
 .gameRules{
 	background-color: #f0087c;
 	margin-top: 1em;
+	border: 5px solid #381932;
 	/*margin-left: 1em;*/
 	line-height: 2;
 	padding: 1.5em 1.5em 1em 1.5em;
 }
 p{
 	margin-bottom: 1em;
-	color:#ffc5e2;
+	color:#fbe1f6;
+}
+i{
+	font-style: italic;
 }
 
 .randomNum{
 	height:8em;
-	background-color:#f479d6;
+	background-color:#FF69B4;
+	border: 5px solid #381932;
 	text-align: center;
 	color: purple;
+
 	/*margin-left: 1em;*/
 }
 
 .scoreCounter{
 	height: 8em;
-	background-color: #d050b1;
+	background-color: #FF69B4;
+	border: 5px solid #381932;
+	text-align: center;
+	padding-top: 5px;
 	/*margin-left: 1em;*/
 }
 
@@ -52,18 +62,22 @@ p{
 	height: 8em;
 	width: 8em;
 	display: inline-block;
+	padding-right: .5em;
 
 }
 
 .scoreTally{
 	background-color: #d82a81;
 	height: 1.5em;
+	border: 2px solid #381932;
 }
 
 .tally{
 	background-color: #d82a81;
 	height: 5em;
 	margin-top: .5em;
+	border: 5px solid #381932;
+	text-align: center;
 
 }
 

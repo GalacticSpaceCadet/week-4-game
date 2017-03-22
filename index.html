@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,134 +9,162 @@
     <!-- Bootstrap File -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
+
 <body class="container">
-  <div class="row">
-    <div class="col-md-6">
-   <header>
-      <h1>Mean Girls: Regina's Republic</h1>  
-       
-        <audio autoplay loop>
-          <source src="meanmusic.mp3">
-        </audio>
-
-    </header>
-    </div>
-  </div>
-
-   <div class="row">
-      <div class="col-md-6">
-        <section class="gameRules">
-
-          
-          <p>You will be given a random number at the start of the game.</p>
-
-          <p>There are four Plastics bellow. Clicking a Plasting casts her lunch vote and will add a specific amount of votes to your total score.</p>
-
-          <p>You can sit with us if you match your total score to the random number, you sit with the Art Freaks if your total score goes above the random number.</p>
-
-          <p>The value of each plastics vote is hidden from you until you click on it.</p>
-
-          <p>Each time when the voting begins, the game will change the values of each Plastic's vote.</p>
-        </section>
-    </div>
-  </div>
-  <br>
-
-   <div class="row">
-      <div class="col-md-3">
-       <section class="randomNum">
-          <span id="numberIs"></span>
-       </section>
-      </div>
-
-        <div class="col-md-2">
-         <section class="scoreCounter">
-            <span id="wins"></span>
-            <span id="losses"></span>
-          </section>
+    <div class="row">
+        <div class="col-md-6">
+            <header>
+                <h1>Mean Girls: Regina's Republic</h1>
+                <audio autoplay loop>
+                    <source src="meanmusic.mp3">
+                </audio>
+            </header>
         </div>
     </div>
-  </br>
-
-  <div class="row">
-      <div class="col-md-6">
-        <div class="theButtons">
-
-             <input class="button" type="image" id="cady" src="pictures/cady.jpg">
-          
-              <input class="button" type="image" id="gretchen" src="pictures/gretchen.jpeg">
-         
-             <input class="button" type="image" id="regina" src="pictures/regina.jpeg">
-      
-             <input class="button" type="image" id="karen" src="pictures/karen.jpeg">
-          </div>
-      </div>
-    
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <section class="scoreTally">
-        
-        <p>Your Total score is:</p>
-          
-      </section>
+    <div class="row">
+        <div class="col-md-6">
+            <section class="gameRules">
+                <p><i>"Oh, and we always vote before we ask someone to eat lunch with us because you have to be considerate of the rest of the group."</i> - Gretchen</p>
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four Plastics bellow. Clicking a Plasting casts her lunch vote and will add a specific amount of votes to your total score.</p>
+                <p>You can sit with us if you match your total score to the random number, you sit with the Art Freaks if your total score goes above the random number.</p>
+                <p>The value of each plastics vote is hidden from you until you click on it.</p>
+                <p>Each time when the voting begins, the game will change the values of each Plastic's vote.</p>
+            </section>
+        </div>
     </div>
-  </div>
-
-  <div class="row">
-      <div class="col-md-3">
-       <section class="tally">
-          <span id="currentTally"></span>
-       </section>
-      </div>
-  </div>
-  <br></br>
-
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
-
-  <script type="text/javascript">
-
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <section class="randomNum">
+                <span id="numberIs"></span>
+            </section>
+        </div>
+        <div class="col-md-2">
+            <section class="scoreCounter">
+                <p>Can you sit with us?</p>
+                <span id="wins"></span>
+                <span id="losses"></span>
+            </section>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="theButtons">
+                <input class="button" type="image" id="cady" src="pictures/cady.jpg">
+                <input class="button" type="image" id="gretchen" src="pictures/gretchen.jpeg">
+                <input class="button" type="image" id="regina" src="pictures/regina.jpeg">
+                <input class="button" type="image" id="karen" src="pictures/karen.jpeg">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <section class="scoreTally">
+                <p>Your Total score is:</p>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <section class="tally">
+                <span id="currentTally"></span>
+            </section>
+        </div>
+    </div>
+    <br></br>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script type="text/javascript">
     var cady;
     var regina;
     var gretchen;
     var karen;
-    var wins=0;
+    var wins = 0;
     var losses = 0;
     var ranNum;
-   
-    
-
+    var tally = 0;
 
     $(function() {
-       ranNum = Math.floor(Math.random() *(120 - 19 + 1) + 19);
-      
-      $("#numberIs").html(ranNum);
-      $("#numberIs").css({fontSize: "5em",color:"#fbd0e6"});
-
-      cady = Math.floor(Math.random() * 12 + 1);
-      $("#cady").val(cady);
-
-      gretchen = Math.floor(Math.random() * 12 + 1);
-      $("#gretchen").val(gretchen);
-
-      regina = Math.floor(Math.random() * 12 + 1);
-      $("#regina").val(regina);
-
-      karen = Math.floor(Math.random() * 12 + 1);
-      $("#karen").val(karen);
-
-      var tally = 0;
-      $('button').click(function(){
-      tally = Number(tally) + Number($(this).val());
-      $('.total').text("Total: "+theTotal);        
-      });
-
-      $('.tally').text("Total: "+theTotal); 
 
 
-});
+        ranNum = Math.floor(Math.random() * (120 - 19 + 1) + 19);
 
-</script>
+        $("#numberIs").html(ranNum);
+        $("#numberIs").css({
+            fontSize: "5em",
+            color: "#fbd0e6"
+        });
+
+        cady = Math.floor(Math.random() * 12 + 1);
+        $("#cady").val(cady);
+
+        $('#cady').click(function() {
+            tally += cady;
+            $("#currentTally").html(tally);
+
+            loserOrPlastic();
+
+        });
+
+        gretchen = Math.floor(Math.random() * 12 + 1);
+        $("#gretchen").val(gretchen);
+
+        $('#gretchen').click(function() {
+            tally += gretchen;
+            $("#currentTally").html(tally);
+
+            loserOrPlastic();
+            updateStats();
+        });
+
+        regina = Math.floor(Math.random() * 12 + 1);
+        $("#regina").val(regina);
+
+        $('#regina').click(function() {
+            tally += regina;
+            $("#currentTally").html(tally);
+
+            loserOrPlastic();
+            updateStats();
+        });
+
+        karen = Math.floor(Math.random() * 12 + 1);
+        $("#karen").val(karen);
+
+        $('#karen').click(function() {
+            tally += karen;
+            $("#currentTally").html(tally);
+
+            loserOrPlastic();
+            updateStats();
+        });
+
+
+    });
+
+
+
+    function loserOrPlastic() {
+        if (tally === ranNum) {
+            wins++;
+       
+        } else if (tally > ranNum) {
+            losses++;
+
+        }
+        updateStats();
+    };
+
+    function updateStats() {
+        $("#wins").html("Yes: " + wins);
+        $("#losses").html("No: " + losses);
+        $("#currentTally").css({
+            fontSize: "3em",
+            color: "#fbd0e6"
+        });
+    }
+    </script>
 </body>
+
 </html>
