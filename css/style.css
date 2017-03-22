@@ -1,0 +1,72 @@
+body {
+  background-image: url(../pictures/background.jpg);
+  background-size: 76%;
+  background-position:center right;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 34px;
+  color:;
+}
+
+header{
+	height: 10%;
+	background-color:#FF69B4;
+	text-align: center;
+	padding: .5em;
+	font-size: 1em;
+	color: white;
+
+}
+
+.rulesContainer{
+	height: 400px;
+}
+
+.gameRules{
+	background-color: #f0087c;
+	margin-top: 1em;
+	/*margin-left: 1em;*/
+	line-height: 2;
+	padding: 1.5em 1.5em 1em 1.5em;
+}
+p{
+	margin-bottom: 1em;
+	color:#ffc5e2;
+}
+
+.randomNum{
+	height:8em;
+	background-color:#f479d6;
+	text-align: center;
+	color: purple;
+	/*margin-left: 1em;*/
+}
+
+.scoreCounter{
+	height: 8em;
+	background-color: #d050b1;
+	/*margin-left: 1em;*/
+}
+
+.button{
+	height: 8em;
+	width: 8em;
+	display: inline-block;
+
+}
+
+.scoreTally{
+	background-color: #d82a81;
+	height: 1.5em;
+}
+
+.tally{
+	background-color: #d82a81;
+	height: 5em;
+	margin-top: .5em;
+
+}
+
+.numberIs{
+	font-size: 10px;
+}
