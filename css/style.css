@@ -21,6 +21,7 @@ header{
 
 .rulesContainer{
 	height: 400px;
+	z-index: -1;
 }
 
 .gameRules{
